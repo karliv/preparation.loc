@@ -69,32 +69,57 @@ SplQueue — используется для создания очередей.
 
 
 Задание №5.
-interface MyInt {
-    public function funcI();
-    private function funcP();
-} 
-class A {
-    protected prop1;
-    private prop2;
+<?php
+interface MyInt 
+{
+    public function method1();
+    public function method2();    //Интерфейс не имеет реализации, соответсвенно не должен содержать в себе приватных методов
+}
 
-    function funcA(){
+class A 
+{
+    protected $prop1;    //Были забыты $ - знак объявления переменной
+    private $prop2;
+
+    public function getProp2()
+    {
        return $this->prop2;
     }
+
+    public function setProp2($data)
+    {
+        $this->prop2 = $data;
+    }
 }
-class B extends A {
-    function funcB(){
+
+class B extends A 
+{
+    function getProp1()
+    {
        return $this->prop1;
     }
 }
-class C extends B implements MyInt {
-    function funcB(){
+
+class C extends B implements MyInt
+{
+    function getProp1()
+    {
        return $this->prop1;
     }
-    private function funcP(){
+
+    public function method1()
+    {
        return 123;
     }
-}  
+
+    public function method2()   //Не было реализовано
+    {
+       return 123;
+    }
+}
+
 $b = new B();
-$b->funcA();
+$b->setProp2(321);
+echo $b->getProp1();
 $c = new C();
-$c->funcI();
+echo $c->method1();
