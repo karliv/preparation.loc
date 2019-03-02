@@ -34,8 +34,11 @@ document.querySelector('.task-link6').addEventListener('click', (e) => {
 });
 
 //Задание №7.
-document.querySelectorAll('.red').forEach((elem) => elem.childNodes[0].tagName === 'SPAN' ? 
+document.querySelector('.task-link7').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelectorAll('.red').forEach((elem) => elem.childNodes[0].tagName === 'SPAN' ? 
                                           elem.getElementsByTagName('span')[0].style.backgroundColor = 'red' : null);
+});
 
 
 //Задание №8.
