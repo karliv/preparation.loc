@@ -1,0 +1,1 @@
+SELECT `name`, `id` FROM `buses` ORDER BY `id` DESC LIMIT 1;;
