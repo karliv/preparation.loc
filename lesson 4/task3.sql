@@ -1,0 +1,1 @@
+SELECT * FROM `employee` AS `e` WHERE `salary` > 3800;

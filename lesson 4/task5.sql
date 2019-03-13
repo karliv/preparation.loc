@@ -1,0 +1,1 @@
+SELECT * FROM `buses` ORDER BY `seats` DESC;
